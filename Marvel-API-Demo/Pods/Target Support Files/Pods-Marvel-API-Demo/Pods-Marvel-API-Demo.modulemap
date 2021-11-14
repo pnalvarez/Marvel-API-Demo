@@ -1,0 +1,6 @@
+framework module Pods_Marvel_API_Demo {
+  umbrella header "Pods-Marvel-API-Demo-umbrella.h"
+
+  export *
+  module * { export * }
+}
