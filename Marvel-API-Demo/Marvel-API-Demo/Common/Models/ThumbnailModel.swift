@@ -1,4 +1,4 @@
-struct ThumbnailModel: Decodable {
+struct ThumbnailModel: Decodable, Equatable {
     let path: String
     let imageExtension: String
     

@@ -15,12 +15,15 @@ final class GeneralCharacterListInteractor {
     private var currentLimit: Int = Constants.initialOffset
     private var total: Int = 0
     private var characterList: [CharacterModel] = []
+    private let pageSize: Int
     
     init(service: GeneralCharacterListServicing,
          presenter: GeneralCharacterListPresenting,
+         pageSize: Int,
          dependencies: Dependencies) {
         self.service = service
         self.presenter = presenter
+        self.pageSize = pageSize
         self.dependencies = dependencies
     }
 }
@@ -35,8 +38,8 @@ extension GeneralCharacterListInteractor: GeneralCharacterListInteracting {
             case let .success(model):
                 self.total = model.data.total
                 self.characterList.append(contentsOf: model.data.results)
-                self.currentLimit += Constants.pageSize
-                self.currentOffset += Constants.pageSize
+                self.currentLimit += self.pageSize-1
+                self.currentOffset += self.pageSize-1
                 self.presenter.presentCharacterList(total: self.total,
                                                     self.characterList)
             case .failure:
@@ -50,12 +53,12 @@ extension GeneralCharacterListInteractor: GeneralCharacterListInteracting {
             currentOffset = index
             if currentOffset > currentLimit {
                 service.getGeneralCharacterList(offset: currentOffset,
-                                                limit: Constants.pageSize) { result in
+                                                limit: pageSize) { result in
                     switch result {
                     case let .success(model):
                         self.total = model.data.total
                         self.characterList.append(contentsOf: model.data.results)
-                        self.currentLimit += Constants.pageSize
+                        self.currentLimit += self.pageSize
                         self.presenter.presentCharacterList(total: self.total,
                                                             self.characterList)
                     case .failure:

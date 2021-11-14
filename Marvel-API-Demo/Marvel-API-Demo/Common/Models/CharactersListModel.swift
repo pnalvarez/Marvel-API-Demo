@@ -1,8 +1,8 @@
-struct CharactersListModel: Decodable {
+struct CharactersListModel: Decodable, Equatable {
     let total: Int
     let results: [CharacterModel]
 }
 
-struct CharacterListResultModel: Decodable {
+struct CharacterListResultModel: Decodable, Equatable {
     let data: CharactersListModel
 }
