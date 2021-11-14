@@ -1,8 +1,10 @@
-//
-//  GeneralCharacterListPresenter.swift
-//  Marvel-API-Demo
-//
-//  Created by Pedro Alvarez on 13/11/21.
-//
+protocol GeneralCharacterListPresenting {
+    func presentLoading(_ loading: Bool)
+    func presentCharacterList(total: Int, _ response: [CharacterModel])
+    func presentCharacterDetails(_ character: CharacterModel)
+    func presentGenericError()
+}
 
-import Foundation
+final class GeneralCharacterListPresenter {
+    
+}

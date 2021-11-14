@@ -30,6 +30,7 @@
 		3F51DA84274186ED0058C47B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F51DA83274186ED0058C47B /* API.swift */; };
 		3F51DA86274188EE0058C47B /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F51DA85274188EE0058C47B /* HTTPMethod.swift */; };
 		3F51DA892741963F0058C47B /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F51DA882741963F0058C47B /* DependencyContainer.swift */; };
+		3F51DA8B27419BAF0058C47B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F51DA8A27419BAF0058C47B /* Constants.swift */; };
 		5B73AEEE2C7CC7117F84D75C /* Pods_Marvel_API_Demo_Marvel_API_DemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97FDD25232B349070739BBF5 /* Pods_Marvel_API_Demo_Marvel_API_DemoUITests.framework */; };
 		96D90DC8A7AC9450F2AD38E3 /* Pods_Marvel_API_DemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A20BF13FE49C2ECC44B0928 /* Pods_Marvel_API_DemoTests.framework */; };
 /* End PBXBuildFile section */
@@ -81,6 +82,7 @@
 		3F51DA83274186ED0058C47B /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		3F51DA85274188EE0058C47B /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		3F51DA882741963F0058C47B /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		3F51DA8A27419BAF0058C47B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4D86ED0F7C3EAFDD39D7FDFD /* Pods-Marvel-API-DemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel-API-DemoTests.debug.xcconfig"; path = "Target Support Files/Pods-Marvel-API-DemoTests/Pods-Marvel-API-DemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		616D3732A8FC7C747D69B860 /* Pods-Marvel-API-Demo-Marvel-API-DemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel-API-Demo-Marvel-API-DemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Marvel-API-Demo-Marvel-API-DemoUITests/Pods-Marvel-API-Demo-Marvel-API-DemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8A20BF13FE49C2ECC44B0928 /* Pods_Marvel_API_DemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel_API_DemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,6 +238,7 @@
 		3F51DA662740A8280058C47B /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				3F51DA8A27419BAF0058C47B /* Constants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 				3F51DA6E2740AFD70058C47B /* GeneralCharacterListController.swift in Sources */,
 				3F51DA6C2740AF810058C47B /* GeneralCharacterListView.swift in Sources */,
 				3F51DA802741859D0058C47B /* CharactersListModel.swift in Sources */,
+				3F51DA8B27419BAF0058C47B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
