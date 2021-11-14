@@ -1,11 +1,10 @@
-//
-//  GeneralCharacterListController.swift
-//  Marvel-API-Demo
-//
-//  Created by Pedro Alvarez on 13/11/21.
-//
-
 import UIKit
+
+protocol GeneralCharacterListDisplaying: AnyObject {
+    func displayLoading(_ loading: Bool)
+    func displayCharacterList(total: Int, _ viewModel: [CharacterViewModel])
+    func displayError(_ viewModel: ErrorViewModel)
+}
 
 class GeneralCharacterListController: UIViewController {
     

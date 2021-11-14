@@ -1,8 +1,9 @@
-//
-//  GeneralCharacterListCoordinator.swift
-//  Marvel-API-Demo
-//
-//  Created by Pedro Alvarez on 13/11/21.
-//
+import UIKit
 
-import Foundation
+enum GeneralCharacterListAction {
+    case characterDetails(model: CharacterModel)
+}
+
+protocol GeneralCharacterListCoordinating {
+    func perform(_ action: GeneralCharacterListAction)
+}

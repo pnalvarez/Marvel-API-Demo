@@ -31,6 +31,8 @@
 		3F51DA892741963F0058C47B /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F51DA882741963F0058C47B /* DependencyContainer.swift */; };
 		3F51DA8B27419BAF0058C47B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F51DA8A27419BAF0058C47B /* Constants.swift */; };
 		3F51DA8F2741A24B0058C47B /* GeneralCharacterListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F51DA8E2741A24B0058C47B /* GeneralCharacterListInteractorTests.swift */; };
+		3F8F4F402741ADBA00CF2EB7 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F4F3F2741ADBA00CF2EB7 /* CharacterViewModel.swift */; };
+		3F8F4F422741AE7500CF2EB7 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F4F412741AE7500CF2EB7 /* ErrorViewModel.swift */; };
 		5B73AEEE2C7CC7117F84D75C /* Pods_Marvel_API_Demo_Marvel_API_DemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97FDD25232B349070739BBF5 /* Pods_Marvel_API_Demo_Marvel_API_DemoUITests.framework */; };
 		96D90DC8A7AC9450F2AD38E3 /* Pods_Marvel_API_DemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A20BF13FE49C2ECC44B0928 /* Pods_Marvel_API_DemoTests.framework */; };
 /* End PBXBuildFile section */
@@ -83,6 +85,8 @@
 		3F51DA882741963F0058C47B /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		3F51DA8A27419BAF0058C47B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3F51DA8E2741A24B0058C47B /* GeneralCharacterListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCharacterListInteractorTests.swift; sourceTree = "<group>"; };
+		3F8F4F3F2741ADBA00CF2EB7 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
+		3F8F4F412741AE7500CF2EB7 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 		4D86ED0F7C3EAFDD39D7FDFD /* Pods-Marvel-API-DemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel-API-DemoTests.debug.xcconfig"; path = "Target Support Files/Pods-Marvel-API-DemoTests/Pods-Marvel-API-DemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		616D3732A8FC7C747D69B860 /* Pods-Marvel-API-Demo-Marvel-API-DemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel-API-Demo-Marvel-API-DemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Marvel-API-Demo-Marvel-API-DemoUITests/Pods-Marvel-API-Demo-Marvel-API-DemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8A20BF13FE49C2ECC44B0928 /* Pods_Marvel_API_DemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel_API_DemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +197,7 @@
 		3F51DA612740A7DF0058C47B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3F8F4F3E2741ADA300CF2EB7 /* ViewModels */,
 				3F51DA87274196320058C47B /* Dependencies */,
 				3F51DA672740A8360058C47B /* Models */,
 				3F51DA662740A8280058C47B /* Constants */,
@@ -296,6 +301,15 @@
 				3F51DA8E2741A24B0058C47B /* GeneralCharacterListInteractorTests.swift */,
 			);
 			path = GeneralCharacterList;
+			sourceTree = "<group>";
+		};
+		3F8F4F3E2741ADA300CF2EB7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3F8F4F3F2741ADBA00CF2EB7 /* CharacterViewModel.swift */,
+				3F8F4F412741AE7500CF2EB7 /* ErrorViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		68B51287DDC32DE542D8F50B /* Pods */ = {
@@ -569,7 +583,9 @@
 				3F51DA782740B0310058C47B /* GeneralCharacterListEndpoint.swift in Sources */,
 				3F51DA762740B01F0058C47B /* GeneralCharacterListCoordinator.swift in Sources */,
 				3F51DA302740A71F0058C47B /* AppDelegate.swift in Sources */,
+				3F8F4F422741AE7500CF2EB7 /* ErrorViewModel.swift in Sources */,
 				3F51DA7E274184FF0058C47B /* ThumbnailModel.swift in Sources */,
+				3F8F4F402741ADBA00CF2EB7 /* CharacterViewModel.swift in Sources */,
 				3F51DA82274186390058C47B /* APIEndpointExposable.swift in Sources */,
 				3F51DA322740A71F0058C47B /* SceneDelegate.swift in Sources */,
 				3F51DA86274188EE0058C47B /* HTTPMethod.swift in Sources */,
