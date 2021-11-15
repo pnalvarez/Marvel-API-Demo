@@ -89,8 +89,8 @@ private extension GeneralCharacterListController {
 
 extension GeneralCharacterListController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        dataSource.setup(total: <#T##Int#>, viewModel: <#T##[CharacterViewModel]#>)
-//        tableView.reloadData()
+        dataSource.setup(searchText: searchText)
+        tableView.reloadData()
     }
 }
 
