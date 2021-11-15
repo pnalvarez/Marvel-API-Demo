@@ -1,6 +1,6 @@
 import UIKit
 
-enum GeneralCharacterListAction {
+enum GeneralCharacterListAction: Equatable {
     case characterDetails(model: CharacterModel)
 }
 
