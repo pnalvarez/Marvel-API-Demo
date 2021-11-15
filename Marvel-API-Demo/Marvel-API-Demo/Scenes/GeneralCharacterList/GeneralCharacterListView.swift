@@ -1,10 +1,3 @@
-//
-//  GeneralCharacterListView.swift
-//  Marvel-API-Demo
-//
-//  Created by Pedro Alvarez on 13/11/21.
-//
-
 import UIKit
 import SnapKit
 
@@ -15,6 +8,7 @@ final class GeneralCharacterListView: UIView {
          tableView: UITableView) {
         self.tableView = tableView
         super.init(frame: frame)
+        buildLayout()
     }
     
     required init?(coder: NSCoder) {
