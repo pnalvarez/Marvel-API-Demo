@@ -1,6 +1,6 @@
 protocol GeneralCharacterListPresenting {
     func presentLoading(_ loading: Bool)
-    func presentCharacterList(total: Int, _ response: [CharacterModel])
+    func presentCharacterList(total: Int, _ response: [CharacterModel], filtering: Bool)
     func presentCharacterDetails(_ character: CharacterModel)
     func presentGenericError()
 }
@@ -24,10 +24,10 @@ extension GeneralCharacterListPresenter: GeneralCharacterListPresenting {
         viewController?.displayLoading(loading)
     }
     
-    func presentCharacterList(total: Int, _ response: [CharacterModel]) {
+    func presentCharacterList(total: Int, _ response: [CharacterModel], filtering: Bool) {
         let viewModel = response.map({ CharacterViewModel(name: $0.name,
                                                           image: $0.thumbnail.path + "." + $0.thumbnail.imageExtension) })
-        viewController?.displayCharacterList(total: total, viewModel)
+        viewController?.displayCharacterList(total: total, viewModel, filtering: filtering)
     }
     
     func presentCharacterDetails(_ character: CharacterModel) {

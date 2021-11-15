@@ -2,6 +2,7 @@ protocol GeneralCharacterListInteracting {
     func loadInitialCharacters()
     func loadCharacter(index: Int)
     func didSelectCharacter(index: Int)
+    func searchCharacter(withPrefix prefix: String)
 }
 
 final class GeneralCharacterListInteractor {
@@ -39,7 +40,8 @@ extension GeneralCharacterListInteractor: GeneralCharacterListInteracting {
                 self.characterList.append(contentsOf: model.data.results)
                 self.currentOffset += self.pageSize-1
                 self.presenter.presentCharacterList(total: self.total,
-                                                    self.characterList)
+                                                    self.characterList,
+                                                    filtering: false)
             case .failure:
                 self.presenter.presentGenericError()
             }
@@ -56,7 +58,8 @@ extension GeneralCharacterListInteractor: GeneralCharacterListInteracting {
                     self.total = model.data.total
                     self.characterList.append(contentsOf: model.data.results)
                     self.presenter.presentCharacterList(total: self.total,
-                                                        self.characterList)
+                                                        self.characterList,
+                                                        filtering: false)
                 case .failure:
                     self.presenter.presentGenericError()
                 }
@@ -66,5 +69,12 @@ extension GeneralCharacterListInteractor: GeneralCharacterListInteracting {
     
     func didSelectCharacter(index: Int) {
         presenter.presentCharacterDetails(characterList[index])
+    }
+    
+    func searchCharacter(withPrefix prefix: String) {
+        let filteredCharacters = characterList.filter({ $0.name.hasPrefix(prefix) })
+        presenter.presentCharacterList(total: total,
+                                       filteredCharacters,
+                                       filtering: !prefix.isEmpty)
     }
 }

@@ -2,7 +2,7 @@ import UIKit
 
 protocol GeneralCharacterListDisplaying: AnyObject {
     func displayLoading(_ loading: Bool)
-    func displayCharacterList(total: Int, _ viewModel: [CharacterViewModel])
+    func displayCharacterList(total: Int, _ viewModel: [CharacterViewModel], filtering: Bool)
     func displayError(_ viewModel: ErrorViewModel)
 }
 
@@ -37,6 +37,13 @@ class GeneralCharacterListController: UIViewController {
         return view
     }()
     
+    private lazy var emptyListView: EmptyListView = {
+        let view = EmptyListView()
+        view.setup(title: Strings.emptyListTitle,
+                   description: Strings.emptyListDescription)
+        return view
+    }()
+    
     private lazy var mainView: GeneralCharacterListView = GeneralCharacterListView(frame: .zero,
                                                                                    tableView: tableView,             activityView: activityView)
     
@@ -44,8 +51,9 @@ class GeneralCharacterListController: UIViewController {
     private let interactor: GeneralCharacterListInteracting
     
     //MARK: Design patterns
-    private let dataSource = GeneralCharacterListTableViewDataSource()
+    private lazy var dataSource = GeneralCharacterListTableViewDataSource()
     
+    //MARK: Lifecycle
     init(interactor: GeneralCharacterListInteracting) {
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
@@ -85,12 +93,15 @@ private extension GeneralCharacterListController {
         navigationItem.titleView = searchBar
         navigationItem.title = Strings.characterListTitle
     }
+    
+    func checkEmptyList(_ viewModel: [CharacterViewModel]) {
+        tableView.backgroundView = viewModel.isEmpty ? emptyListView : nil
+    }
 }
 
 extension GeneralCharacterListController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        dataSource.setup(searchText: searchText)
-        tableView.reloadData()
+        interactor.searchCharacter(withPrefix: searchText)
     }
 }
 
@@ -109,8 +120,9 @@ extension GeneralCharacterListController: GeneralCharacterListDisplaying {
         loading ? showLoading() : stopLoading()
     }
     
-    func displayCharacterList(total: Int, _ viewModel: [CharacterViewModel]) {
-        dataSource.setup(total: total, viewModel: viewModel)
+    func displayCharacterList(total: Int, _ viewModel: [CharacterViewModel], filtering: Bool) {
+        dataSource.setup(total: total, viewModel: viewModel, filtering: filtering)
+        checkEmptyList(viewModel)
         tableView.reloadData()
     }
     
