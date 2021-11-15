@@ -12,15 +12,17 @@ private final class GeneralCharacterListPresenterSpy: GeneralCharacterListPresen
     private(set) var total: Int?
     private(set) var characterList: [CharacterModel]?
     private(set) var characterDetails: CharacterModel?
+    private(set) var filtering: Bool?
     
     func presentLoading(_ loading: Bool) {
         presentLoadingCallsCount += 1
     }
     
-    func presentCharacterList(total: Int, _ response: [CharacterModel]) {
+    func presentCharacterList(total: Int, _ response: [CharacterModel], filtering: Bool) {
         presentCharacterListCallsCount += 1
         self.total = total
         self.characterList = response
+        self.filtering = filtering
     }
     
     func presentCharacterDetails(_ character: CharacterModel) {
@@ -107,12 +109,16 @@ final class GeneralCharacterListInteractorTests: XCTestCase {
                                                                                                  imageExtension: "jpg"))
                                                        ]))
     
+    private lazy var filteredCharacters = [CharacterModel(id: 1, name: "Char 1", description: "Desc 1", thumbnail: ThumbnailModel(path: "path 1",
+                                                                                                                                  imageExtension: "jpg"))]
+    
     func testLoadInitialCharacters_WhenTaskIsSuccess_ShouldCallPresentCharacterList() {
         service.result = .success(charactersFirstPage)
         sut.loadInitialCharacters()
         XCTAssertEqual(presenter.presentCharacterListCallsCount, 1)
         XCTAssertEqual(presenter.total, 6)
         XCTAssertEqual(presenter.characterList, charactersFirstPage.data.results)
+        XCTAssertEqual(presenter.filtering, false)
     }
     
     func testLoadInitialCharacters_WhenTaskIsFailure_ShouldCallPresentGenericError() {
@@ -138,6 +144,7 @@ final class GeneralCharacterListInteractorTests: XCTestCase {
         XCTAssertEqual(presenter.presentCharacterListCallsCount, 2)
         XCTAssertEqual(presenter.total, 6)
         XCTAssertEqual(presenter.characterList, allCharacters.data.results)
+        XCTAssertEqual(presenter.filtering, false)
     }
     
     func testLoadCharacter_WhenTaskIsFailure_ShouldCallPresentGenericError() {
@@ -153,5 +160,25 @@ final class GeneralCharacterListInteractorTests: XCTestCase {
         sut.loadInitialCharacters()
         sut.didSelectCharacter(index: 0)
         XCTAssertEqual(presenter.characterDetails, charactersFirstPage.data.results[0])
+    }
+    
+    func testSearchCharacter_WhenPrefixIsNotEmpty_ShouldCallPresentCharacterList() {
+        service.result = .success(charactersFirstPage)
+        sut.loadInitialCharacters()
+        sut.searchCharacter(withPrefix: "Char 1")
+        XCTAssertEqual(presenter.characterList, filteredCharacters)
+        XCTAssertEqual(presenter.total, 6)
+        XCTAssertEqual(presenter.presentCharacterListCallsCount, 2)
+        XCTAssertEqual(presenter.filtering, true)
+    }
+    
+    func testSearchCharacter_WhenPrefixIsEmpty_ShouldcallPresentCharacterList() {
+        service.result = .success(charactersFirstPage)
+        sut.loadInitialCharacters()
+        sut.searchCharacter(withPrefix: "")
+        XCTAssertEqual(presenter.characterList, charactersFirstPage.data.results)
+        XCTAssertEqual(presenter.total, 6)
+        XCTAssertEqual(presenter.presentCharacterListCallsCount, 2)
+        XCTAssertEqual(presenter.filtering, false)
     }
 }

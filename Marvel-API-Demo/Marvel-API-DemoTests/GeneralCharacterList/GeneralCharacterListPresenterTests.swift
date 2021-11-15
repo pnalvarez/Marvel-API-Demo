@@ -11,15 +11,17 @@ private final class GeneralCharacterListViewControllerSpy: GeneralCharacterListD
     private(set) var total: Int?
     private(set) var characters: [CharacterViewModel]?
     private(set) var error: ErrorViewModel?
+    private(set) var filtering: Bool?
     
     func displayLoading(_ loading: Bool) {
         displayLoadingCallsCount += 1
     }
     
-    func displayCharacterList(total: Int, _ viewModel: [CharacterViewModel]) {
+    func displayCharacterList(total: Int, _ viewModel: [CharacterViewModel], filtering: Bool) {
         displayCharacterListCallsCount += 1
         self.total = total
         self.characters = viewModel
+        self.filtering = filtering
     }
     
     func displayError(_ viewModel: ErrorViewModel) {
@@ -73,10 +75,11 @@ final class GeneralCharacterListPresenterTests: XCTestCase {
     }
     
     func testPresentCharacterList_ShouldCallDisplayCharacterList() {
-        sut.presentCharacterList(total: 5, characterList)
+        sut.presentCharacterList(total: 5, characterList, filtering: true)
         XCTAssertEqual(viewController.displayCharacterListCallsCount, 1)
         XCTAssertEqual(viewController.characters, characterListViewModel)
         XCTAssertEqual(viewController.total, 5)
+        XCTAssertEqual(viewController.filtering, true)
     }
     
     func testPresentCharacterDetails_ShouldCallPerform() {
