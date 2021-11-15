@@ -15,7 +15,7 @@ final class API<T: Decodable> {
     private let dependencies: Dependencies
     private let endpoint: APIEndpointExposable
     
-    private let basePath = "http://gateway.marvel.com/v1/public"
+    private let basePath = "https://gateway.marvel.com/v1/public"
     private let apiKey = "5d270d6ba90b8e7de71d2a65b6cce967&hash=1eb2d8a190e62c0ecf934462a91eb071"
     
     init(endpoint: APIEndpointExposable,
@@ -26,7 +26,7 @@ final class API<T: Decodable> {
     
     @discardableResult
     func request<T>(completion: @escaping Completion<T>) -> URLSessionDataTask? {
-        let baseURL = basePath + endpoint.path + "?ts=1&apiKey=\(apiKey)" + (makeExtraHeaders() ?? "")
+        let baseURL = basePath + endpoint.path + "?ts=1&apikey=\(apiKey)" + (makeExtraHeaders() ?? "")
         guard let url = URL(string: baseURL) else {
             completion(.failure(.invalidURL))
             return nil

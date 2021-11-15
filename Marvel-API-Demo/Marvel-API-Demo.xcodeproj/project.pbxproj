@@ -39,6 +39,8 @@
 		3F8F4F4B2741F37300CF2EB7 /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F4F4A2741F37300CF2EB7 /* UITableView+.swift */; };
 		3F8F4F4D2741F40000CF2EB7 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F4F4C2741F40000CF2EB7 /* ReusableView.swift */; };
 		3F8F4F4F2741F5A600CF2EB7 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F4F4E2741F5A600CF2EB7 /* UIView+.swift */; };
+		3F8F4F522741F88800CF2EB7 /* GeneralCharacterListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F4F512741F88800CF2EB7 /* GeneralCharacterListTableViewDataSource.swift */; };
+		3F8F4F552741F95500CF2EB7 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F4F542741F95500CF2EB7 /* LoadingTableViewCell.swift */; };
 		5B73AEEE2C7CC7117F84D75C /* Pods_Marvel_API_Demo_Marvel_API_DemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97FDD25232B349070739BBF5 /* Pods_Marvel_API_Demo_Marvel_API_DemoUITests.framework */; };
 		96D90DC8A7AC9450F2AD38E3 /* Pods_Marvel_API_DemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A20BF13FE49C2ECC44B0928 /* Pods_Marvel_API_DemoTests.framework */; };
 /* End PBXBuildFile section */
@@ -99,6 +101,8 @@
 		3F8F4F4A2741F37300CF2EB7 /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		3F8F4F4C2741F40000CF2EB7 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		3F8F4F4E2741F5A600CF2EB7 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		3F8F4F512741F88800CF2EB7 /* GeneralCharacterListTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCharacterListTableViewDataSource.swift; sourceTree = "<group>"; };
+		3F8F4F542741F95500CF2EB7 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		4D86ED0F7C3EAFDD39D7FDFD /* Pods-Marvel-API-DemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel-API-DemoTests.debug.xcconfig"; path = "Target Support Files/Pods-Marvel-API-DemoTests/Pods-Marvel-API-DemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		616D3732A8FC7C747D69B860 /* Pods-Marvel-API-Demo-Marvel-API-DemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel-API-Demo-Marvel-API-DemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Marvel-API-Demo-Marvel-API-DemoUITests/Pods-Marvel-API-Demo-Marvel-API-DemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8A20BF13FE49C2ECC44B0928 /* Pods_Marvel_API_DemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel_API_DemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,6 +228,7 @@
 		3F51DA622740A80D0058C47B /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				3F8F4F532741F94800CF2EB7 /* Cells */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 		3F51DA682740A83E0058C47B /* GeneralCharacterList */ = {
 			isa = PBXGroup;
 			children = (
+				3F8F4F502741F86F00CF2EB7 /* DataSource */,
 				3F8F4F472741F31500CF2EB7 /* Cells */,
 				3F51DA6B2740AF810058C47B /* GeneralCharacterListView.swift */,
 				3F51DA6D2740AFD70058C47B /* GeneralCharacterListController.swift */,
@@ -334,6 +340,22 @@
 			isa = PBXGroup;
 			children = (
 				3F8F4F482741F32300CF2EB7 /* GeneralCharacterListTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3F8F4F502741F86F00CF2EB7 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				3F8F4F512741F88800CF2EB7 /* GeneralCharacterListTableViewDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		3F8F4F532741F94800CF2EB7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3F8F4F542741F95500CF2EB7 /* LoadingTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -611,6 +633,7 @@
 				3F51DA782740B0310058C47B /* GeneralCharacterListEndpoint.swift in Sources */,
 				3F51DA762740B01F0058C47B /* GeneralCharacterListCoordinator.swift in Sources */,
 				3F51DA302740A71F0058C47B /* AppDelegate.swift in Sources */,
+				3F8F4F552741F95500CF2EB7 /* LoadingTableViewCell.swift in Sources */,
 				3F8F4F422741AE7500CF2EB7 /* ErrorViewModel.swift in Sources */,
 				3F8F4F4B2741F37300CF2EB7 /* UITableView+.swift in Sources */,
 				3F51DA7E274184FF0058C47B /* ThumbnailModel.swift in Sources */,
@@ -619,6 +642,7 @@
 				3F51DA322740A71F0058C47B /* SceneDelegate.swift in Sources */,
 				3F51DA86274188EE0058C47B /* HTTPMethod.swift in Sources */,
 				3F8F4F492741F32300CF2EB7 /* GeneralCharacterListTableViewCell.swift in Sources */,
+				3F8F4F522741F88800CF2EB7 /* GeneralCharacterListTableViewDataSource.swift in Sources */,
 				3F51DA892741963F0058C47B /* DependencyContainer.swift in Sources */,
 				3F51DA6E2740AFD70058C47B /* GeneralCharacterListController.swift in Sources */,
 				3F51DA6C2740AF810058C47B /* GeneralCharacterListView.swift in Sources */,
@@ -802,7 +826,7 @@
 				INFOPLIST_FILE = "Marvel-API-Demo/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -832,7 +856,7 @@
 				INFOPLIST_FILE = "Marvel-API-Demo/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

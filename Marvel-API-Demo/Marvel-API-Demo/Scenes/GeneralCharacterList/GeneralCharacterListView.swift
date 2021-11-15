@@ -3,10 +3,13 @@ import SnapKit
 
 final class GeneralCharacterListView: UIView {
     private unowned var tableView: UITableView
+    private unowned var activityView: UIActivityIndicatorView
     
     init(frame: CGRect,
-         tableView: UITableView) {
+         tableView: UITableView,
+         activityView: UIActivityIndicatorView) {
         self.tableView = tableView
+        self.activityView = activityView
         super.init(frame: frame)
         buildLayout()
     }
@@ -18,11 +21,15 @@ final class GeneralCharacterListView: UIView {
 
 extension GeneralCharacterListView: ViewCodeProtocol {
     func buildViewHierarchy() {
-        addSubview(tableView)
+        addSubviews(tableView, activityView)
     }
     
     func setupConstraints() {
         tableView.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide)
+            make.left.right.bottom.equalToSuperview()
+        }
+        activityView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide)
             make.left.right.bottom.equalToSuperview()
         }

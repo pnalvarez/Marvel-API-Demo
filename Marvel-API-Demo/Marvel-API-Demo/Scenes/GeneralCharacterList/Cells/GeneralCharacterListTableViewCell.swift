@@ -7,11 +7,16 @@ final class GeneralCharacterListTableViewCell: UITableViewCell {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12)
+        label.textColor = .blue
         label.numberOfLines = 0
         return label
     }()
     
-    private lazy var characterImageView: UIImageView = UIImageView()
+    private lazy var characterImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleToFill
+        return imageView
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -24,7 +29,7 @@ final class GeneralCharacterListTableViewCell: UITableViewCell {
     
     func setup(_ viewModel: CharacterViewModel) {
         titleLabel.text = viewModel.name
-        characterImageView.sd_setImage(with: URL(string: viewModel.image))
+        characterImageView.sd_setImage(with: URL(string: viewModel.image.replacingOccurrences(of: "http", with: "https")))
     }
 }
 
@@ -43,12 +48,13 @@ extension GeneralCharacterListTableViewCell: ViewCodeProtocol {
         }
         characterImageView.snp.makeConstraints { make in
             make.top.equalTo(titleContainer.snp.bottom)
-            make.left.right.equalToSuperview()
-            make.height.equalTo(64)
+            make.left.right.bottom.equalToSuperview()
+            make.height.equalTo(100)
         }
     }
     
     func configureViews() {
         backgroundColor = .white
+        selectionStyle = .none
     }
 }

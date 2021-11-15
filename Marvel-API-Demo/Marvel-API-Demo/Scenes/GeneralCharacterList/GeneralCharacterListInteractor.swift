@@ -12,7 +12,6 @@ final class GeneralCharacterListInteractor {
     private let dependencies: Dependencies
     
     private var currentOffset: Int = Constants.initialOffset
-    private var currentLimit: Int = Constants.initialOffset
     private var total: Int = 0
     private var characterList: [CharacterModel] = []
     private let pageSize: Int
@@ -38,7 +37,6 @@ extension GeneralCharacterListInteractor: GeneralCharacterListInteracting {
             case let .success(model):
                 self.total = model.data.total
                 self.characterList.append(contentsOf: model.data.results)
-                self.currentLimit += self.pageSize-1
                 self.currentOffset += self.pageSize-1
                 self.presenter.presentCharacterList(total: self.total,
                                                     self.characterList)
@@ -50,20 +48,17 @@ extension GeneralCharacterListInteractor: GeneralCharacterListInteracting {
     
     func loadCharacter(index: Int) {
         if index > currentOffset {
-            currentOffset = index
-            if currentOffset > currentLimit {
-                service.getGeneralCharacterList(offset: currentOffset,
-                                                limit: pageSize) { result in
-                    switch result {
-                    case let .success(model):
-                        self.total = model.data.total
-                        self.characterList.append(contentsOf: model.data.results)
-                        self.currentLimit += self.pageSize
-                        self.presenter.presentCharacterList(total: self.total,
-                                                            self.characterList)
-                    case .failure:
-                        self.presenter.presentGenericError()
-                    }
+            currentOffset += pageSize
+            service.getGeneralCharacterList(offset: currentOffset,
+                                            limit: pageSize) { result in
+                switch result {
+                case let .success(model):
+                    self.total = model.data.total
+                    self.characterList.append(contentsOf: model.data.results)
+                    self.presenter.presentCharacterList(total: self.total,
+                                                        self.characterList)
+                case .failure:
+                    self.presenter.presentGenericError()
                 }
             }
         }
