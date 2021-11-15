@@ -6,4 +6,5 @@ enum Constants {
 enum Strings {
     static let genericErrorTitle = "Ops, ocorreu um erro!"
     static let genericErrorDescription = "Não foi possível carregar esta tela"
+    static let characterListTitle = "Lista de personagens"
 }

@@ -34,6 +34,7 @@
 		3F8F4F402741ADBA00CF2EB7 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F4F3F2741ADBA00CF2EB7 /* CharacterViewModel.swift */; };
 		3F8F4F422741AE7500CF2EB7 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F4F412741AE7500CF2EB7 /* ErrorViewModel.swift */; };
 		3F8F4F442741EC8A00CF2EB7 /* GeneralCharacterListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F4F432741EC8A00CF2EB7 /* GeneralCharacterListPresenterTests.swift */; };
+		3F8F4F462741F20000CF2EB7 /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F4F452741F20000CF2EB7 /* ViewCodeProtocol.swift */; };
 		5B73AEEE2C7CC7117F84D75C /* Pods_Marvel_API_Demo_Marvel_API_DemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97FDD25232B349070739BBF5 /* Pods_Marvel_API_Demo_Marvel_API_DemoUITests.framework */; };
 		96D90DC8A7AC9450F2AD38E3 /* Pods_Marvel_API_DemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A20BF13FE49C2ECC44B0928 /* Pods_Marvel_API_DemoTests.framework */; };
 /* End PBXBuildFile section */
@@ -89,6 +90,7 @@
 		3F8F4F3F2741ADBA00CF2EB7 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
 		3F8F4F412741AE7500CF2EB7 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 		3F8F4F432741EC8A00CF2EB7 /* GeneralCharacterListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCharacterListPresenterTests.swift; sourceTree = "<group>"; };
+		3F8F4F452741F20000CF2EB7 /* ViewCodeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeProtocol.swift; sourceTree = "<group>"; };
 		4D86ED0F7C3EAFDD39D7FDFD /* Pods-Marvel-API-DemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel-API-DemoTests.debug.xcconfig"; path = "Target Support Files/Pods-Marvel-API-DemoTests/Pods-Marvel-API-DemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		616D3732A8FC7C747D69B860 /* Pods-Marvel-API-Demo-Marvel-API-DemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel-API-Demo-Marvel-API-DemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Marvel-API-Demo-Marvel-API-DemoUITests/Pods-Marvel-API-Demo-Marvel-API-DemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8A20BF13FE49C2ECC44B0928 /* Pods_Marvel_API_DemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel_API_DemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				3F51DA81274186390058C47B /* APIEndpointExposable.swift */,
+				3F8F4F452741F20000CF2EB7 /* ViewCodeProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				3F51DA7A2740B05B0058C47B /* GeneralCharacterListFactory.swift in Sources */,
 				3F51DA702740AFFB0058C47B /* GeneralCharacterListPresenter.swift in Sources */,
 				3F51DA722740B0070058C47B /* GeneralCharacterListInteractor.swift in Sources */,
+				3F8F4F462741F20000CF2EB7 /* ViewCodeProtocol.swift in Sources */,
 				3F51DA84274186ED0058C47B /* API.swift in Sources */,
 				3F51DA7C274184B70058C47B /* CharacterModel.swift in Sources */,
 				3F51DA782740B0310058C47B /* GeneralCharacterListEndpoint.swift in Sources */,
