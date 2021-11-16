@@ -21,7 +21,9 @@ final class GeneralCharacterListCoordinator {
 
 private extension GeneralCharacterListCoordinator {
     func goToCharacterDetails(_ details: CharacterModel) {
-        //TO DO
+        let characterDetailsViewController = CharacterDetailsFactory.make(characterDetails: details)
+        viewController?.navigationController?.pushViewController(characterDetailsViewController,
+                                                                 animated: true)
     }
 }
 

@@ -8,7 +8,8 @@ enum GeneralCharacterListFactory {
                                                         presenter: presenter,
                                                         pageSize: pageSize,
                                                         dependencies: dependencyContainer)
-        let viewController = GeneralCharacterListController(interactor: interactor)
+        let viewController = GeneralCharacterListController(interactor: interactor,
+                                                            dependencies: dependencyContainer)
         presenter.viewController = viewController
         coordinator.viewController = viewController
         return viewController

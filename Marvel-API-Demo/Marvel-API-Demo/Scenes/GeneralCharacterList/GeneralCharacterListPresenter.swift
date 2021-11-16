@@ -26,7 +26,7 @@ extension GeneralCharacterListPresenter: GeneralCharacterListPresenting {
     
     func presentCharacterList(total: Int, _ response: [CharacterModel], filtering: Bool) {
         let viewModel = response.map({ CharacterViewModel(name: $0.name,
-                                                          image: $0.thumbnail.path + "." + $0.thumbnail.imageExtension) })
+                                                          image: $0.thumbnail.path + Strings.dot + $0.thumbnail.imageExtension) })
         viewController?.displayCharacterList(total: total, viewModel, filtering: filtering)
     }
     

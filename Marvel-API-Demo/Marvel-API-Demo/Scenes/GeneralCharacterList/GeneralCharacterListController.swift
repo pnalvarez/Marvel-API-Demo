@@ -7,6 +7,7 @@ protocol GeneralCharacterListDisplaying: AnyObject {
 }
 
 class GeneralCharacterListController: UIViewController {
+    typealias Dependencies = HasNoDependency
     //MARK: UI properties
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -53,9 +54,14 @@ class GeneralCharacterListController: UIViewController {
     //MARK: Design patterns
     private lazy var dataSource = GeneralCharacterListTableViewDataSource()
     
+    //MARK: Dependencies
+    private let dependencies: Dependencies
+    
     //MARK: Lifecycle
-    init(interactor: GeneralCharacterListInteracting) {
+    init(interactor: GeneralCharacterListInteracting,
+         dependencies: Dependencies) {
         self.interactor = interactor
+        self.dependencies = dependencies
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -97,6 +103,13 @@ private extension GeneralCharacterListController {
     func checkEmptyList(_ viewModel: [CharacterViewModel]) {
         tableView.backgroundView = viewModel.isEmpty ? emptyListView : nil
     }
+    
+    func showErrorScreen(_ view: ErrorView) {
+        mainView.addSubview(view)
+        view.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
 }
 
 extension GeneralCharacterListController: UISearchBarDelegate {
@@ -127,6 +140,8 @@ extension GeneralCharacterListController: GeneralCharacterListDisplaying {
     }
     
     func displayError(_ viewModel: ErrorViewModel) {
-        //TO DO
+        let errorView = ErrorView()
+        errorView.setup(title: viewModel.title, description: viewModel.description)
+        showErrorScreen(errorView)
     }
 }
