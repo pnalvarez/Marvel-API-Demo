@@ -23,7 +23,7 @@ class GeneralCharacterListController: UIViewController {
     private lazy var searchBar: UISearchBar = {
         let view = UISearchBar(frame: .zero)
         view.tintColor = .white
-        view.backgroundColor = .gray
+        view.backgroundColor = .white
         view.delegate = self
         view.sizeToFit()
         return view
@@ -92,9 +92,8 @@ private extension GeneralCharacterListController {
     }
     
     func configureUI() {
-        navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.backgroundColor = .gray
+        navigationController?.navigationBar.backgroundColor = .white
         navigationController?.navigationBar.tintColor = .white
         navigationItem.titleView = searchBar
         navigationItem.title = Strings.characterListTitle
