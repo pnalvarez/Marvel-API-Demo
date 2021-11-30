@@ -238,6 +238,7 @@
 		3F51DA612740A7DF0058C47B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3F59D9BD27569FCD00D7C925 /* Facade */,
 				3F8F4F3E2741ADA300CF2EB7 /* ViewModels */,
 				3F51DA672740A8360058C47B /* Models */,
 				3F51DA662740A8280058C47B /* Constants */,
@@ -261,7 +262,6 @@
 		3F51DA632740A8110058C47B /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				3F59D9BB27569DD400D7C925 /* DependencyContainer.swift */,
 				3F51DA83274186ED0058C47B /* API.swift */,
 				3F51DA85274188EE0058C47B /* HTTPMethod.swift */,
 			);
@@ -350,6 +350,14 @@
 				3F8F4F432741EC8A00CF2EB7 /* GeneralCharacterListPresenterTests.swift */,
 			);
 			path = GeneralCharacterList;
+			sourceTree = "<group>";
+		};
+		3F59D9BD27569FCD00D7C925 /* Facade */ = {
+			isa = PBXGroup;
+			children = (
+				3F59D9BB27569DD400D7C925 /* DependencyContainer.swift */,
+			);
+			path = Facade;
 			sourceTree = "<group>";
 		};
 		3F8F4F3E2741ADA300CF2EB7 /* ViewModels */ = {
