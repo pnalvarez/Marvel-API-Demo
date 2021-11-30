@@ -28,9 +28,9 @@
 		3F51DA82274186390058C47B /* APIEndpointExposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F51DA81274186390058C47B /* APIEndpointExposable.swift */; };
 		3F51DA84274186ED0058C47B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F51DA83274186ED0058C47B /* API.swift */; };
 		3F51DA86274188EE0058C47B /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F51DA85274188EE0058C47B /* HTTPMethod.swift */; };
-		3F51DA892741963F0058C47B /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F51DA882741963F0058C47B /* DependencyContainer.swift */; };
 		3F51DA8B27419BAF0058C47B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F51DA8A27419BAF0058C47B /* Constants.swift */; };
 		3F51DA8F2741A24B0058C47B /* GeneralCharacterListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F51DA8E2741A24B0058C47B /* GeneralCharacterListInteractorTests.swift */; };
+		3F59D9BC27569DD400D7C925 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F59D9BB27569DD400D7C925 /* DependencyContainer.swift */; };
 		3F5CA81E27431ABB003A645E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5CA81D27431ABB003A645E /* ErrorView.swift */; };
 		3F8F4F402741ADBA00CF2EB7 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F4F3F2741ADBA00CF2EB7 /* CharacterViewModel.swift */; };
 		3F8F4F422741AE7500CF2EB7 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8F4F412741AE7500CF2EB7 /* ErrorViewModel.swift */; };
@@ -102,9 +102,9 @@
 		3F51DA81274186390058C47B /* APIEndpointExposable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpointExposable.swift; sourceTree = "<group>"; };
 		3F51DA83274186ED0058C47B /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		3F51DA85274188EE0058C47B /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
-		3F51DA882741963F0058C47B /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		3F51DA8A27419BAF0058C47B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3F51DA8E2741A24B0058C47B /* GeneralCharacterListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCharacterListInteractorTests.swift; sourceTree = "<group>"; };
+		3F59D9BB27569DD400D7C925 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		3F5CA81D27431ABB003A645E /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		3F8F4F3F2741ADBA00CF2EB7 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
 		3F8F4F412741AE7500CF2EB7 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
@@ -238,8 +238,8 @@
 		3F51DA612740A7DF0058C47B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3F59D9BA27569DC400D7C925 /* Dependencies */,
 				3F8F4F3E2741ADA300CF2EB7 /* ViewModels */,
-				3F51DA87274196320058C47B /* Dependencies */,
 				3F51DA672740A8360058C47B /* Models */,
 				3F51DA662740A8280058C47B /* Constants */,
 				3F51DA652740A81C0058C47B /* Extensions */,
@@ -343,14 +343,6 @@
 			path = Launch;
 			sourceTree = "<group>";
 		};
-		3F51DA87274196320058C47B /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				3F51DA882741963F0058C47B /* DependencyContainer.swift */,
-			);
-			path = Dependencies;
-			sourceTree = "<group>";
-		};
 		3F51DA8C2741A20E0058C47B /* GeneralCharacterList */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,6 +350,14 @@
 				3F8F4F432741EC8A00CF2EB7 /* GeneralCharacterListPresenterTests.swift */,
 			);
 			path = GeneralCharacterList;
+			sourceTree = "<group>";
+		};
+		3F59D9BA27569DC400D7C925 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				3F59D9BB27569DD400D7C925 /* DependencyContainer.swift */,
+			);
+			path = Dependencies;
 			sourceTree = "<group>";
 		};
 		3F8F4F3E2741ADA300CF2EB7 /* ViewModels */ = {
@@ -676,6 +676,7 @@
 			files = (
 				3F8F4F682743068A00CF2EB7 /* CharacterDetailsFactory.swift in Sources */,
 				3F51DA742740B0140058C47B /* GeneralCharacterListService.swift in Sources */,
+				3F59D9BC27569DD400D7C925 /* DependencyContainer.swift in Sources */,
 				3F5CA81E27431ABB003A645E /* ErrorView.swift in Sources */,
 				3F51DA7A2740B05B0058C47B /* GeneralCharacterListFactory.swift in Sources */,
 				3F8F4F5A2742EFC800CF2EB7 /* UIStackView+.swift in Sources */,
@@ -705,7 +706,6 @@
 				3F8F4F492741F32300CF2EB7 /* GeneralCharacterListTableViewCell.swift in Sources */,
 				3F8F4F522741F88800CF2EB7 /* GeneralCharacterListTableViewDataSource.swift in Sources */,
 				3F8F4F5C2743034B00CF2EB7 /* CharacterDetailsView.swift in Sources */,
-				3F51DA892741963F0058C47B /* DependencyContainer.swift in Sources */,
 				3F51DA6E2740AFD70058C47B /* GeneralCharacterListController.swift in Sources */,
 				3F51DA6C2740AF810058C47B /* GeneralCharacterListView.swift in Sources */,
 				3F51DA802741859D0058C47B /* CharactersListModel.swift in Sources */,
